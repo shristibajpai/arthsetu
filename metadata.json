@@ -1,0 +1,6 @@
+{
+  "name": "ArthSetu — Mindful Financial Wisdom",
+  "description": "A serene, heritage-inspired financial dashboard and wealth planning platform harmonizing Indian financial realities, mindful allocation, and dynamic goal modeling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
