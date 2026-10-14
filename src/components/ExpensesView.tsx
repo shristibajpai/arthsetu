@@ -5,9 +5,6 @@ import { calculateExpenseMetrics } from '../utils/calculations';
 import { EditExpenseModal } from './Modals';
 import { ConfirmationModal } from './ConfirmationModal';
 
-export const GHAT_EXPENSE_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuAMsZz377yC36vP9Yq0oKvd3D-L_9f1Wb8x93k5r6l3X4k7C0d7jY7X1x9_6oZf6h7l8m2k5v8=w1200';
-
 interface ExpensesViewProps {
   expenses: ExpenseRecord[];
   monthlyIncome: number;
@@ -195,14 +192,13 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-outline-variant/30 pb-6">
         <div>
           <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">
-            Monthly Outflow & Discipline / Margashirsha Maas
+            Monthly spending overview
           </span>
           <h2 className="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">
-            Vyaya (Expenses) & Dhan Pravah
+            Expenses and cash flow
           </h2>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
-            Carefully log and balance every outflow. In Vedic philosophy, conscious expenditure
-            preserves peace of mind (*Shanti*) and safeguards the sovereign family corpus.
+            Track your spending, plan for regular bills, and leave room for your savings goals.
           </p>
         </div>
 
@@ -223,7 +219,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
         {/* Card 1: Total Monthly Spent with Ring Meter */}
         <div
           className="xl:col-span-4 min-h-[195px] rounded-2xl p-6 backdrop-blur-xl shadow-[0_8px_30px_rgba(80,65,45,0.06)] border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
@@ -261,14 +257,14 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
           </div>
         </div>
 
-        {/* Card 2: Essential Needs (Aavashyak) */}
+        {/* Card 2: Essential Needs (Essentials) */}
         <div
           className="xl:col-span-3 min-h-[195px] rounded-2xl p-6 backdrop-blur-xl shadow-[0_8px_30px_rgba(80,65,45,0.06)] border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
-              Aavashyak (Needs)
+              Essential needs
             </span>
             <div className="w-8 h-8 rounded-xl bg-primary-fixed/60 flex items-center justify-center text-primary">
               <span className="material-symbols-outlined text-[18px]">verified_user</span>
@@ -289,14 +285,14 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
           </div>
         </div>
 
-        {/* Card 3: Lifestyle & Wants (Aanand) */}
+        {/* Card 3: Lifestyle & Wants (Lifestyle) */}
         <div
           className="xl:col-span-3 min-h-[195px] rounded-2xl p-6 backdrop-blur-xl shadow-[0_8px_30px_rgba(80,65,45,0.06)] border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
-              Aanand (Wants)
+              Lifestyle spending
             </span>
             <div className="w-8 h-8 rounded-xl bg-secondary-fixed/60 flex items-center justify-center text-secondary">
               <span className="material-symbols-outlined text-[18px]">celebration</span>
@@ -320,7 +316,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
         {/* Card 4: Average Outlay & Count */}
         <div
           className="xl:col-span-2 min-h-[195px] rounded-2xl p-6 backdrop-blur-xl shadow-[0_8px_30px_rgba(80,65,45,0.06)] border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
@@ -350,7 +346,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
         <div
           className="lg:col-span-5 rounded-3xl p-7 relative border border-white/60 shadow-[0_12px_40px_rgba(80,65,45,0.09)]"
           style={{
-            background: 'rgba(255, 250, 240, 0.75)',
+            background: 'rgba(255, 255, 255, 0.75)',
             backdropFilter: 'blur(20px)',
           }}
         >
@@ -361,7 +357,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
               </div>
               <div>
                 <h3 className="font-headline-sm text-headline-sm text-on-surface leading-snug font-bold">
-                  Lekhapatra (Quick Entry)
+                  Quick entry
                 </h3>
                 <span className="font-label-sm text-label-sm text-on-surface-variant">
                   Log an outlay into your fiscal river
@@ -449,7 +445,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
                   }`}
                 >
                   <span className="material-symbols-outlined text-[18px]">verified_user</span>
-                  <span>Aavashyak (Need)</span>
+                  <span>Essential need</span>
                 </button>
                 <button
                   type="button"
@@ -461,7 +457,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
                   }`}
                 >
                   <span className="material-symbols-outlined text-[18px]">spa</span>
-                  <span>Aanand (Want)</span>
+                  <span>Lifestyle spending</span>
                 </button>
               </div>
             </div>
@@ -490,7 +486,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
                 <option value="Utilities">Utilities & Bills</option>
                 <option value="Decor">Home Decor & Festivals</option>
                 <option value="Digital">Digital Subscriptions</option>
-                <option value="Education">Education & Vidya</option>
+                <option value="Education">Education</option>
                 <option value="Leisure">Lifestyle & Leisure</option>
                 <option value="Other">Other</option>
               </select>
@@ -585,10 +581,10 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
 
         {/* Right Column: Visual Breakdown & Ledger Showcase */}
         <div className="lg:col-span-7 flex flex-col gap-6">
-          {/* Visual Ratio: Needs vs Wants Harmony Bar & Heritage Ghat Imagery */}
+          {/* Needs and wants breakdown */}
           <div
             className="rounded-3xl p-6 backdrop-blur-2xl shadow-[0_12px_40px_rgba(80,65,45,0.08)] flex flex-col gap-5 border border-white/60"
-            style={{ background: 'rgba(255, 250, 240, 0.75)' }}
+            style={{ background: 'rgba(255, 255, 255, 0.75)' }}
           >
             <div className="flex items-center justify-between">
               <div className="flex flex-col">
@@ -626,28 +622,17 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
               </div>
             </div>
 
-            {/* Heritage Sacred Ghat Visual Banner */}
-            <div className="relative rounded-2xl overflow-hidden shadow-sm h-32 flex items-center">
-              <img
-                alt="Dawn breaking over ancient sandstone temple ghats"
-                className="absolute inset-0 w-full h-full object-cover"
-                src={GHAT_EXPENSE_IMAGE}
-                onError={(e) => {
-                  (e.currentTarget as HTMLElement).style.display = 'none';
-                }}
-              />
-              <div className="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/70 to-transparent flex items-center p-6">
-                <div className="flex flex-col max-w-sm text-white">
-                  <span className="font-label-sm text-label-sm uppercase tracking-widest text-amber-300 font-semibold">
-                    Vedic Guidance
-                  </span>
-                  <p className="font-headline-sm text-[16px] text-white mt-0.5 leading-snug font-bold">
-                    Mitavyaya: Spending without greed, conserving without poverty.
-                  </p>
-                  <span className="font-body-sm text-xs text-stone-200 mt-1">
-                    Maintaining the threshold allows monthly surplus to flow smoothly into investments.
-                  </span>
-                </div>
+            <div className="rounded-2xl bg-gradient-to-br from-[#0f766e] to-[#115e59] shadow-sm min-h-32 flex items-center p-6">
+              <div className="flex flex-col max-w-sm text-white">
+                <span className="font-label-sm uppercase tracking-widest text-teal-100 font-semibold">
+                  A simple monthly habit
+                </span>
+                <p className="font-headline-sm text-[16px] text-white mt-0.5 leading-snug font-bold">
+                  Spend with intention. Save for what matters.
+                </p>
+                <span className="font-body-sm text-xs text-teal-50 mt-1">
+                  Review your spending regularly and direct the remaining balance toward your goals.
+                </span>
               </div>
             </div>
           </div>
@@ -655,14 +640,14 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
           {/* Recent Transactions Ledger */}
           <div
             className="rounded-3xl p-6 backdrop-blur-2xl shadow-[0_12px_40px_rgba(80,65,45,0.08)] flex flex-col gap-5 border border-white/60"
-            style={{ background: 'rgba(255, 250, 240, 0.75)' }}
+            style={{ background: 'rgba(255, 255, 255, 0.75)' }}
           >
             {/* Table Header and Search / Filter Controls */}
             <div className="flex flex-col gap-4 pb-2">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <span className="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">
-                    Pravaha (Ledger)
+                    Transaction history
                   </span>
                   <h4 className="font-headline-sm text-headline-sm text-on-surface font-bold">
                     Recorded Outflows ({filteredExpenses.length})
@@ -739,7 +724,7 @@ export const ExpensesView: React.FC<ExpensesViewProps> = ({
                 <span className="text-xs text-on-surface-variant mt-1 max-w-xs">
                   {searchQuery
                     ? 'No matching expenses for your search term.'
-                    : 'Log your first outflow in Lekhapatra to begin your conscious cashflow audit.'}
+                    : 'Add your first expense to start tracking your cash flow.'}
                 </span>
               </div>
             ) : (

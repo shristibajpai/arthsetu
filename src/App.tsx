@@ -52,9 +52,6 @@ import {
 } from './components/Modals';
 import { AIAssistantModal } from './components/AIAssistantModal';
 
-export const GLOBAL_BACKDROP_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuDl_Fb_hin10sv2C0rl58jAy17tJDJOkae64ixpSSTYzJLWegaw2_vgZ8FbWZ-wf7Ik9q4TzeFNevAxijaVdOwy0txxSeecw82RDvihWXIZVRKF2rEC8gblO_QOMkTsfzokAY0RC-KlsjMU5DDj_Vgl_bVV2D53FRt8l6Q0yBojDkGaYTnLxqikiHo-Ut5NX-u2wh3573y5s0Hb1-Yb-lp7EhwlazaPtMzGLL0R029jLOgqxYIxEBkqjg';
-
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<NavScreen>('dashboard');
 
@@ -70,6 +67,36 @@ export default function App() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const searchResults = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return [];
+
+    const expenseResults = expenses
+      .filter((expense) =>
+        [expense.name, expense.category, expense.channel, expense.notes ?? '']
+          .some((value) => value.toLowerCase().includes(query))
+      )
+      .slice(0, 5)
+      .map((expense) => ({
+        id: expense.id,
+        title: expense.name,
+        detail: `${expense.category} · ${expense.channel}`,
+        screen: 'expenses' as const,
+      }));
+    const goalResults = goals
+      .filter((goal) =>
+        [goal.title, goal.categoryName, goal.timelineDetails]
+          .some((value) => value.toLowerCase().includes(query))
+      )
+      .slice(0, 5)
+      .map((goal) => ({
+        id: goal.id,
+        title: goal.title,
+        detail: `${goal.categoryName} · Goal`,
+        screen: 'goals-and-what-if' as const,
+      }));
+    return [...expenseResults, ...goalResults].slice(0, 8);
+  }, [expenses, goals, searchQuery]);
 
   // Modals state
   const [isNewGoalModalOpen, setIsNewGoalModalOpen] = useState(false);
@@ -205,16 +232,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-surface font-body-md text-on-surface antialiased relative selection:bg-secondary-fixed overflow-x-hidden">
-      {/* Background with serene watercolor painting & translucent gradient backdrop */}
-      <div
-        className="fixed inset-0 z-0 bg-cover bg-center pointer-events-none"
-        style={{
-          backgroundImage: `url('${GLOBAL_BACKDROP_IMAGE}')`,
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f4e8d2]/90 via-[#fffaf0]/80 to-[#f9edd6]/85 backdrop-blur-[10px]" />
-      </div>
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#f8fafc] via-[#f3f6f9] to-[#eef3f7] pointer-events-none" />
 
       {/* Left Navigation Sidebar */}
       <Sidebar
@@ -237,6 +255,8 @@ export default function App() {
           onNavigateProfile={() => setCurrentScreen('profile')}
           onSearch={setSearchQuery}
           searchQuery={searchQuery}
+          searchResults={searchResults}
+          onSelectSearchResult={setCurrentScreen}
           onToggleMobileMenu={() => setIsMobileSidebarOpen((prev) => !prev)}
           userName={userProfile.name}
           healthScore={healthMetrics.score}

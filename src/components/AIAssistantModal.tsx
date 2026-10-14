@@ -188,7 +188,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
         {
           id: `msg-${Date.now()}`,
           role: 'model',
-          text: `Namaste! I am your ArthSetu AI companion powered by ${activeMeta.name}. Ask me anything about budgeting, emergency funds, SIP compounding, or debt strategy.`,
+          text: `Hello! I am your ArthSetu AI companion powered by ${activeMeta.name}. Ask me anything about budgeting, emergency funds, SIP compounding, or debt strategy.`,
           timestamp: 'Just now',
           provider: aiSettings.provider,
         },
@@ -277,7 +277,7 @@ export const AIAssistantModal: React.FC<AIAssistantModalProps> = ({
       <div
         className="rounded-3xl max-w-4xl w-full h-[92vh] max-h-[850px] shadow-2xl border border-white/60 flex flex-col overflow-hidden animate-in zoom-in-95 duration-200 relative"
         style={{
-          background: 'rgba(255, 250, 240, 0.98)',
+          background: 'rgba(255, 255, 255, 0.98)',
           backdropFilter: 'blur(24px)',
         }}
       >

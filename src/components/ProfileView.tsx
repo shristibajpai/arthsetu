@@ -148,7 +148,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
       <div
         className="rounded-3xl p-8 lg:p-10 border border-white/60 shadow-xl relative overflow-hidden"
         style={{
-          background: 'rgba(255, 250, 240, 0.75)',
+          background: 'rgba(255, 255, 255, 0.75)',
           backdropFilter: 'blur(16px)',
         }}
       >
@@ -170,7 +170,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                   {profile.name}
                 </h2>
                 <span className="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
-                  Verified Family Karta
+                  Verified household profile
                 </span>
               </div>
               <p className="font-body-md text-body-md text-on-surface-variant mt-1">
@@ -184,7 +184,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 <span>•</span>
                 <span className="flex items-center gap-1">
                   <span className="material-symbols-outlined text-[15px] text-secondary">shield</span>
-                  Vittiya Santulan: {healthMetrics.score}/100
+                  Financial health: {healthMetrics.score}/100
                 </span>
                 <span>•</span>
                 <span className="text-primary font-bold">
@@ -224,7 +224,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           onSubmit={handleSave}
           className="rounded-3xl p-8 shadow-xl border border-primary/30 space-y-6 animate-in slide-in-from-top-4 duration-300"
           style={{
-            background: 'rgba(255, 250, 240, 0.95)',
+            background: 'rgba(255, 255, 255, 0.95)',
             backdropFilter: 'blur(20px)',
           }}
         >
@@ -374,11 +374,11 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
                 }
                 className="w-full px-4 py-2.5 rounded-xl border border-outline-variant/40 bg-surface-container-lowest font-body-sm focus:outline-none"
               >
-                <option value="Conservative (Suraksha)">Conservative (Suraksha)</option>
-                <option value="Balanced Growth (Madhyam Marg)">
-                  Balanced Growth (Madhyam Marg)
+                <option value="Conservative">Conservative</option>
+                <option value="Balanced growth">
+                  Balanced growth
                 </option>
-                <option value="Aggressive Growth (Tejas)">Aggressive Growth (Tejas)</option>
+                <option value="Aggressive growth">Aggressive growth</option>
               </select>
             </div>
 
@@ -427,7 +427,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           <div
             className="rounded-3xl p-8 shadow-xl border border-white/60 space-y-6"
             style={{
-              background: 'rgba(255, 250, 240, 0.72)',
+              background: 'rgba(255, 255, 255, 0.72)',
               backdropFilter: 'blur(16px)',
             }}
           >
@@ -532,14 +532,14 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           <div
             className="rounded-3xl p-8 shadow-xl border border-white/60 space-y-5"
             style={{
-              background: 'rgba(255, 250, 240, 0.72)',
+              background: 'rgba(255, 255, 255, 0.72)',
               backdropFilter: 'blur(16px)',
             }}
           >
             <div className="flex items-center justify-between">
               <div>
                 <span className="font-label-sm text-label-sm uppercase tracking-widest text-tertiary font-semibold">
-                  Parivar Constellation
+                  Household
                 </span>
                 <h3 className="font-headline-sm text-headline-sm text-on-surface mt-1 font-semibold">
                   Family Dependents & Healthcare Cover
@@ -602,7 +602,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           <div
             className="rounded-3xl p-8 shadow-xl border border-white/60 space-y-6"
             style={{
-              background: 'rgba(255, 250, 240, 0.72)',
+              background: 'rgba(255, 255, 255, 0.72)',
               backdropFilter: 'blur(16px)',
             }}
           >
@@ -662,7 +662,7 @@ export const ProfileView: React.FC<ProfileViewProps> = ({
           <div
             className="rounded-3xl p-8 shadow-xl border border-white/60 space-y-4"
             style={{
-              background: 'rgba(255, 250, 240, 0.72)',
+              background: 'rgba(255, 255, 255, 0.72)',
               backdropFilter: 'blur(16px)',
             }}
           >

@@ -23,7 +23,7 @@ export const INITIAL_EXPENSES: ExpenseRecord[] = [
   },
   {
     id: 'exp-3',
-    name: 'Organic Staples & Ayurvedic Ghee',
+    name: 'Organic Staples & Herbal Ghee',
     category: 'Ration',
     date: 'Nov 15, 2025',
     nature: 'Need',
@@ -53,7 +53,7 @@ export const INITIAL_EXPENSES: ExpenseRecord[] = [
   },
   {
     id: 'exp-6',
-    name: 'Health Checkup & Ayurvedic Consult',
+    name: 'Health Checkup & Herbal Consult',
     category: 'Healthcare',
     date: 'Nov 10, 2025',
     nature: 'Need',
@@ -76,10 +76,10 @@ export const INITIAL_EXPENSES: ExpenseRecord[] = [
 export const INITIAL_GOALS: GoalItem[] = [
   {
     id: 'goal-1',
-    title: 'Teerth & Family Sabbatical',
-    categoryName: 'Teerth & Parivar Yatra',
+    title: 'Family travel',
+    categoryName: 'Family travel',
     horizonTag: 'Short-Term · 10 mos to go',
-    badgeText: 'Auspicious',
+    badgeText: 'On Track',
     badgeType: 'auspicious',
     targetAmount: 350000,
     currentAmount: 280000,
@@ -87,12 +87,12 @@ export const INITIAL_GOALS: GoalItem[] = [
     monthlyAllocation: 7000,
     projectedDate: 'September 2026',
     timelineDetails: 'Kashi, Rishikesh & Kedarnath pilgrimage for parents',
-    icon: 'temple_hindu',
+    icon: 'home_work',
   },
   {
     id: 'goal-2',
-    title: 'Ghar Downpayment',
-    categoryName: 'Ghar Prapti',
+    title: 'Home down payment',
+    categoryName: 'House purchase',
     horizonTag: 'Medium-Term · 18 mos to go',
     badgeText: 'On Track',
     badgeType: 'on-track',
@@ -107,7 +107,7 @@ export const INITIAL_GOALS: GoalItem[] = [
   {
     id: 'goal-3',
     title: 'Higher Education Corpus',
-    categoryName: 'Bachhon Ki Shiksha',
+    categoryName: 'Education',
     horizonTag: 'Long-Term · 7 yrs to go',
     badgeText: 'Equity Compounding',
     badgeType: 'compounding',
@@ -121,10 +121,10 @@ export const INITIAL_GOALS: GoalItem[] = [
   },
   {
     id: 'goal-4',
-    title: 'Swatantrata (Financial Independence)',
-    categoryName: 'Moksha Horizon',
+    title: 'Financial independence',
+    categoryName: 'Financial independence',
     horizonTag: 'Horizon Peak · Age 52',
-    badgeText: 'Lifelong Moksha',
+    badgeText: 'Long-term independence',
     badgeType: 'horizon',
     targetAmount: 35000000,
     currentAmount: 9200000,
@@ -139,7 +139,7 @@ export const INITIAL_GOALS: GoalItem[] = [
 export const INITIAL_NOTIFICATIONS: NotificationItem[] = [
   {
     id: 'notif-1',
-    title: 'Kartik Month Priority Sanchay Debited',
+    title: 'Monthly savings allocation completed',
     message: '₹55,500 safely allocated across Nifty 50 Index, Sukanya, and Bharat Bond ETF.',
     time: '2 hours ago',
     type: 'auspicious',
@@ -147,7 +147,7 @@ export const INITIAL_NOTIFICATIONS: NotificationItem[] = [
   },
   {
     id: 'notif-2',
-    title: 'Tax Sanchay Alert: FY26 Slab Optimization',
+    title: 'Tax update: FY26 planning',
     message: 'New Tax regime retains ₹42,000 additional annual cashflow compared to Old Regime.',
     time: '1 day ago',
     type: 'system',
@@ -156,54 +156,51 @@ export const INITIAL_NOTIFICATIONS: NotificationItem[] = [
   {
     id: 'notif-3',
     title: 'Emergency Reserve Milestone (90%)',
-    message: 'Your Aapda Kosh holds ₹5,40,000. Just 0.6 months left to hit the golden 6-month shield.',
+    message: 'Your emergency fund holds ₹5,40,000. Just 0.6 months left to hit the golden 6-month shield.',
     time: '3 days ago',
     type: 'auspicious',
     read: true,
   },
 ];
 
-export const VEDIC_WISDOM_ARTICLES = [
+export const LEARNING_ARTICLES = [
   {
     id: 'vw-1',
-    sanskritTitle: 'धर्मार्थकाममोक्षाणां शरीरं साधनम्',
-    englishTitle: 'The Four Purusharthas of Mindful Wealth',
-    author: 'Chanakya Neeti & Ancient Darshana',
+    subtitle: 'Build wealth with purpose',
+    englishTitle: 'Build Wealth with Purpose',
+    author: 'ArthSetu Learning',
     readTime: '4 min read',
-    excerpt: 'True prosperity (Artha) exists not in frantic accumulation, but as a deliberate stepping stone that enables Dharma (duty), Kama (noble joy), and ultimately Moksha (inner freedom).',
-    fullContent: `In Indian classical thought, Artha is considered one of the four essential human pursuits (Purusharthas), bounded on one side by Dharma (ethical conduct) and on the other by Moksha (spiritual freedom).
-    
-Key Lessons for Modern Wealth:
-1. Pratham Sankalp: Pay yourself first. In ancient royal treasury architecture, 1/6th of revenues were committed to the grain and gold fortress before discretionary disbursement.
-2. Nishkama Sanchay: Invest with steady discipline without panic over daily market tremors. The river finds the ocean not by force, but by persistence.
-3. The 3-Basket Rule: Artha must be divided into Immediate Sustenance (Bhojana), Protective Buffer (Suraksha), and Generational Growth (Vridhi).`,
+    excerpt: 'A clear plan helps you balance today’s needs with the goals and choices you want in the future.',
+    fullContent: `A strong financial plan gives every part of your income a purpose. Start with essential expenses, build a safety buffer, and set aside money for your longer-term goals.
+
+Three practical habits:
+1. Save a set amount as soon as you receive your income.
+2. Invest regularly and review your plan at a steady pace.
+3. Keep emergency savings separate from money set aside for long-term goals.`,
   },
   {
     id: 'vw-2',
-    sanskritTitle: 'मितव्ययः सुखस्य मूलम्',
-    englishTitle: 'Mitavyaya: Spending Without Greed, Conserving Without Poverty',
-    author: 'Sage Vidura in Mahabharata',
+    subtitle: 'Spend with intention',
+    englishTitle: 'Spend with Intention',
+    author: 'ArthSetu Learning',
     readTime: '3 min read',
-    excerpt: 'Mitavyaya is the golden equilibrium between stinginess and reckless extravagance. It transforms spending into an act of reverence and conscious awareness.',
-    fullContent: `Sage Vidura remarked that reckless spending exhausts fortune like water flowing through unbaked clay, whereas excessive miserliness starves the soul and strains familial harmony.
+    excerpt: 'A realistic budget makes room for essential bills, personal priorities, and enjoyable spending.',
+    fullContent: `A useful budget supports your life instead of making every purchase feel like a trade-off. Track where your money goes, cover essential bills first, and set a limit for flexible spending.
 
-Applying Mitavyaya Today:
-- Recognize the difference between Aavashyak (Essential needs) and Aanand (Wants that nourish mind and relationships).
-- Avoid conspicuous debt (Karna-Rina) incurred purely for social display.
-- Every Rupee spent on quality nutrition, family health, and education compounds as sacred human capital.`,
+Try this each month:
+- Separate essential expenses from optional purchases.
+- Set aside savings before spending the rest.
+- Review your plan and adjust it when your priorities change.`,
   },
   {
     id: 'vw-3',
-    sanskritTitle: 'आपत्काले धनं रक्षेत्',
-    englishTitle: 'Aapatkale Dhanam Rakshet: The Architecture of the Emergency Fortress',
-    author: 'Kautilya Arthashastra (Book II)',
+    subtitle: 'Prepare for unexpected costs',
+    englishTitle: 'Prepare for Unexpected Costs',
+    author: 'ArthSetu Learning',
     readTime: '5 min read',
-    excerpt: 'Even the most prosperous kingdom collapses if a sudden drought finds the grain silos empty. Why your liquid runway is your family’s most sacred insurance.',
-    fullContent: `Chanakya advised King Chandragupta that before any military campaign or public monument, the state must possess three years of grain reserves and twelve months of liquid bullion.
+    excerpt: 'An emergency fund can help cover an unexpected bill or a gap in income without disrupting your other goals.',
+    fullContent: `Start with a small, accessible reserve and build it over time. A common target is three to six months of essential expenses, adjusted for your income stability and household needs.
 
-The Modern Aapda Kosh Blueprint:
-- Tier 1: 2 Months living burn in high-yield instant savings for instant medical or domestic urgencies.
-- Tier 2: 2.5 Months in Sovereign Overnight & Liquid mutual funds (T+1 access, zero equity volatility).
-- Tier 3: 1.5 Months in breakable auto-sweep Fixed Deposits yielding guaranteed sovereign rates.`,
+Keep your emergency money easy to access and separate from your regular spending account. Refill the fund after using it, and review the target when your expenses change.`,
   },
 ];

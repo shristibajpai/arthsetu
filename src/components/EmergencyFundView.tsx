@@ -3,9 +3,6 @@ import { EmergencyFundData } from '../types';
 import { formatINR } from '../utils/formatters';
 import { calculateEmergencyMetrics } from '../utils/calculations';
 
-export const GHAT_EMERGENCY_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuCsk3Js5J_Ec2fVZwQNUOT7s7fKi6k2qhDNg1qBlPBCaftk29VLzXPAVMSAgZ2VNz-mdaPq1Xz4i6qlwusIDGe3kZnJlx-TfSYNtnlU2jUI4ZVMkyG4BXfn0xNq1fA54i5Z51v51g';
-
 interface EmergencyFundViewProps {
   emergencyFund: EmergencyFundData;
   onUpdateEmergencyFund: (data: EmergencyFundData) => void;
@@ -78,7 +75,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
       currentAmount: updatedAmount,
     });
     setEditFundInput(updatedAmount.toString());
-    setToastMessage(`Deposited ${formatINR(addAmount)} into Aapda Kosh!`);
+    setToastMessage(`Deposited ${formatINR(addAmount)} into Emergency fund!`);
     setTimeout(() => setToastMessage(null), 3000);
   };
 
@@ -101,7 +98,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
 
   const handleLockStrategy = () => {
     setIsLocked(true);
-    setToastMessage('Aapda Kosh rebalancing strategy locked into automatic SIP routing!');
+    setToastMessage('Emergency fund rebalancing strategy locked into automatic SIP routing!');
     setTimeout(() => {
       setIsLocked(false);
       setToastMessage(null);
@@ -120,40 +117,29 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
         </div>
       )}
 
-      {/* Top Hero Banner */}
-      <div className="relative rounded-3xl overflow-hidden shadow-2xl p-8 lg:p-12 border border-white/60">
-        <img
-          alt="Serene sacred riverbank at dawn with ancient stone ghats"
-          className="absolute inset-0 w-full h-full object-cover"
-          src={GHAT_EMERGENCY_IMAGE}
-          onError={(e) => {
-            (e.currentTarget as HTMLElement).style.display = 'none';
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-stone-950/90 via-stone-900/80 to-transparent" />
+      {/* Emergency fund overview */}
+      <div className="relative rounded-3xl overflow-hidden shadow-sm p-8 lg:p-12 border border-primary/10 bg-gradient-to-br from-[#0f766e] to-[#115e59]">
 
         <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex flex-col max-w-2xl text-white">
             <div className="flex items-center gap-2">
-              <span className="material-symbols-outlined text-amber-300 text-[20px]">
+              <span className="material-symbols-outlined text-teal-100 text-[20px]">
                 shield_with_heart
               </span>
-              <span className="font-label-sm text-label-sm uppercase tracking-widest text-amber-300 font-semibold">
-                Financial Fortress & Buffer
+              <span className="font-label-sm text-label-sm uppercase tracking-widest text-teal-100 font-semibold">
+                Financial safety net
               </span>
             </div>
             <h2 className="font-headline-lg text-headline-lg text-white mt-1 font-bold">
-              Aapda Kosh — Emergency Fund & Safety Runway
+              Emergency fund and savings runway
             </h2>
-            <p className="font-body-md text-body-md text-stone-200 mt-2 leading-relaxed">
-              In Vedic governance, a king’s first duty was the grain treasury (*Koshadhikara*). For
-              the modern family karta, an unshakeable liquid buffer grants the profound peace of
-              mind (*Nirbhaya*) necessary to pursue ambitious long-term goals without fear of market
-              downturns.
+            <p className="font-body-md text-body-md text-teal-50 mt-2 leading-relaxed">
+              Build a liquid reserve for unexpected costs and income gaps. A well-planned emergency
+              fund can protect your long-term goals when life changes unexpectedly.
             </p>
           </div>
 
-          {/* Kavach Status Card */}
+          {/* Funding status */}
           <div className="bg-white/90 backdrop-blur-md p-6 rounded-2xl shadow-lg border border-white/70 flex items-center gap-4 shrink-0">
             <div className="w-14 h-14 rounded-2xl bg-primary-fixed/80 flex items-center justify-center text-primary shrink-0 shadow-sm">
               <span className="material-symbols-outlined text-[30px]">shield</span>
@@ -162,7 +148,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
             <div className="flex flex-col pr-2">
               <div className="flex items-center gap-1.5 text-primary font-label-md font-semibold">
                 <span className="material-symbols-outlined text-[16px]">verified_user</span>
-                <span>Suraksha Kavach {metrics.progressPercent}% Active</span>
+                <span>{metrics.progressPercent}% funded</span>
               </div>
               <span className="font-headline-sm text-headline-sm text-on-surface mt-0.5 font-bold">
                 {formatINR(metrics.currentAmount)} / {formatINR(metrics.targetAmount)}
@@ -182,7 +168,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
         {/* Card 1: Current Buffer */}
         <div
           className="relative min-h-[195px] rounded-2xl backdrop-blur-md p-6 shadow-md border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -244,7 +230,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
         {/* Card 2: Safety Runway */}
         <div
           className="relative min-h-[195px] rounded-2xl backdrop-blur-md p-6 shadow-md border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -285,7 +271,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
         {/* Card 3: Recommended Addition */}
         <div
           className="relative min-h-[195px] rounded-2xl backdrop-blur-md p-6 shadow-md border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -324,7 +310,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
         {/* Card 4: Quick Deposit */}
         <div
           className="relative min-h-[195px] rounded-2xl backdrop-blur-md p-6 shadow-md border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider font-semibold">
@@ -363,7 +349,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
           <div
             className="rounded-3xl p-8 shadow-xl flex flex-col gap-6 border border-white/60"
             style={{
-              background: 'rgba(255, 250, 240, 0.72)',
+              background: 'rgba(255, 255, 255, 0.72)',
               backdropFilter: 'blur(16px)',
             }}
           >
@@ -506,7 +492,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
           <div
             className="rounded-3xl p-8 shadow-xl flex flex-col gap-5 border border-white/60"
             style={{
-              background: 'rgba(255, 250, 240, 0.72)',
+              background: 'rgba(255, 255, 255, 0.72)',
               backdropFilter: 'blur(16px)',
             }}
           >
@@ -597,7 +583,7 @@ export const EmergencyFundView: React.FC<EmergencyFundViewProps> = ({
             {/* Dynamic Calculation Box */}
             <div className="p-5 rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-md flex flex-col gap-3 border border-outline-variant/30">
               <div className="flex items-center justify-between pb-2 border-b border-outline-variant/20 text-xs">
-                <span className="text-on-surface-variant font-medium">Required Aapda Corpus</span>
+                <span className="text-on-surface-variant font-medium">Emergency fund target</span>
                 <span className="font-headline-sm text-sm text-on-surface font-bold">
                   {formatINR(metrics.targetAmount)}
                 </span>

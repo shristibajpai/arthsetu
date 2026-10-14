@@ -1,47 +1,47 @@
 @import "tailwindcss";
 
 @theme {
-  --color-surface: #fff8f1;
-  --color-surface-dim: #e4d9c3;
-  --color-surface-bright: #fff8f1;
+  --color-surface: #f5f7fa;
+  --color-surface-dim: #e8edf3;
+  --color-surface-bright: #ffffff;
   --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #fff2dc;
-  --color-surface-container: #f9edd6;
-  --color-surface-container-high: #f3e7d1;
-  --color-surface-container-highest: #ede1cb;
-  --color-surface-variant: #ede1cb;
-  --color-on-surface: #201b0e;
-  --color-on-surface-variant: #444840;
-  --color-inverse-surface: #363021;
-  --color-inverse-on-surface: #fcefd9;
-  --color-outline: #75786f;
-  --color-outline-variant: #c5c8bd;
-  --color-surface-tint: #536345;
-  --color-primary: #516143;
+  --color-surface-container-low: #f8fafc;
+  --color-surface-container: #f1f4f8;
+  --color-surface-container-high: #e9eef4;
+  --color-surface-container-highest: #dfe6ee;
+  --color-surface-variant: #e9eef4;
+  --color-on-surface: #17212f;
+  --color-on-surface-variant: #566273;
+  --color-inverse-surface: #17212f;
+  --color-inverse-on-surface: #f5f7fa;
+  --color-outline: #7b8795;
+  --color-outline-variant: #d7dee7;
+  --color-surface-tint: #0f766e;
+  --color-primary: #0f766e;
   --color-on-primary: #ffffff;
-  --color-primary-container: #697a5a;
-  --color-on-primary-container: #f9ffed;
-  --color-inverse-primary: #bacca8;
-  --color-secondary: #8b4f27;
+  --color-primary-container: #115e59;
+  --color-on-primary-container: #ffffff;
+  --color-inverse-primary: #5eead4;
+  --color-secondary: #2563eb;
   --color-on-secondary: #ffffff;
-  --color-secondary-container: #feaf7e;
-  --color-on-secondary-container: #784019;
-  --color-tertiary: #7a5500;
+  --color-secondary-container: #dbeafe;
+  --color-on-secondary-container: #1e40af;
+  --color-tertiary: #0f766e;
   --color-on-tertiary: #ffffff;
-  --color-tertiary-container: #996c04;
-  --color-on-tertiary-container: #fffbff;
-  --color-primary-fixed: #d6e9c3;
-  --color-primary-fixed-dim: #bacca8;
-  --color-on-primary-fixed: #111f08;
-  --color-on-primary-fixed-variant: #3c4b2f;
-  --color-secondary-fixed: #ffdbc8;
-  --color-secondary-fixed-dim: #ffb68a;
-  --color-on-secondary-fixed: #321300;
-  --color-on-secondary-fixed-variant: #6e3811;
-  --color-tertiary-fixed: #ffdeaa;
-  --color-tertiary-fixed-dim: #f5bd58;
-  --color-on-tertiary-fixed: #271900;
-  --color-on-tertiary-fixed-variant: #5f4100;
+  --color-tertiary-container: #ccfbf1;
+  --color-on-tertiary-container: #134e4a;
+  --color-primary-fixed: #ccfbf1;
+  --color-primary-fixed-dim: #99f6e4;
+  --color-on-primary-fixed: #042f2e;
+  --color-on-primary-fixed-variant: #115e59;
+  --color-secondary-fixed: #dbeafe;
+  --color-secondary-fixed-dim: #bfdbfe;
+  --color-on-secondary-fixed: #172554;
+  --color-on-secondary-fixed-variant: #1e40af;
+  --color-tertiary-fixed: #ccfbf1;
+  --color-tertiary-fixed-dim: #99f6e4;
+  --color-on-tertiary-fixed: #042f2e;
+  --color-on-tertiary-fixed-variant: #115e59;
   --color-error: #ba1a1a;
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
@@ -72,7 +72,7 @@
 
 /* Custom Typography helpers to match template specs */
 .font-headline-lg {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 36px;
   line-height: 44px;
   letter-spacing: -0.015em;
@@ -80,14 +80,14 @@
 }
 
 .font-headline-md {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 26px;
   line-height: 34px;
   font-weight: 600;
 }
 
 .font-headline-sm {
-  font-family: 'EB Garamond', serif;
+  font-family: 'Inter', sans-serif;
   font-size: 20px;
   line-height: 28px;
   font-weight: 600;

@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { VEDIC_WISDOM_ARTICLES } from '../data/mockData';
+import { LEARNING_ARTICLES } from '../data/mockData';
 
 interface LearnViewProps {
   readArticles: string[];
@@ -10,17 +10,17 @@ export const LearnView: React.FC<LearnViewProps> = ({
   readArticles,
   onToggleReadArticle,
 }) => {
-  const [activeArticleId, setActiveArticleId] = useState<string>(VEDIC_WISDOM_ARTICLES[0].id);
+  const [activeArticleId, setActiveArticleId] = useState<string>(LEARNING_ARTICLES[0].id);
   const [searchQuery, setSearchQuery] = useState('');
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
   const filteredArticles = useMemo(() => {
-    if (!searchQuery.trim()) return VEDIC_WISDOM_ARTICLES;
+    if (!searchQuery.trim()) return LEARNING_ARTICLES;
     const q = searchQuery.toLowerCase();
-    return VEDIC_WISDOM_ARTICLES.filter(
+    return LEARNING_ARTICLES.filter(
       (a) =>
         a.englishTitle.toLowerCase().includes(q) ||
-        a.sanskritTitle.toLowerCase().includes(q) ||
+        a.subtitle.toLowerCase().includes(q) ||
         a.author.toLowerCase().includes(q) ||
         a.fullContent.toLowerCase().includes(q)
     );
@@ -28,8 +28,8 @@ export const LearnView: React.FC<LearnViewProps> = ({
 
   const activeArticle =
     filteredArticles.find((a) => a.id === activeArticleId) ||
-    VEDIC_WISDOM_ARTICLES.find((a) => a.id === activeArticleId) ||
-    VEDIC_WISDOM_ARTICLES[0];
+    LEARNING_ARTICLES.find((a) => a.id === activeArticleId) ||
+    LEARNING_ARTICLES[0];
 
   const isCurrentRead = readArticles.includes(activeArticle.id);
 
@@ -51,7 +51,7 @@ export const LearnView: React.FC<LearnViewProps> = ({
       <div
         className="rounded-3xl p-8 lg:p-10 border border-white/60 shadow-xl relative overflow-hidden"
         style={{
-          background: 'rgba(255, 250, 240, 0.75)',
+          background: 'rgba(255, 255, 255, 0.75)',
           backdropFilter: 'blur(16px)',
         }}
       >
@@ -62,16 +62,16 @@ export const LearnView: React.FC<LearnViewProps> = ({
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-secondary text-[20px]">menu_book</span>
               <span className="font-label-sm text-label-sm uppercase tracking-widest text-secondary font-semibold">
-                Vedic Artha & Mindful Stewardship
+                Practical money guides
               </span>
             </div>
             <h2 className="font-headline-lg text-headline-lg text-on-surface tracking-tight font-bold">
-              Timeless Financial Dharma
+              Learn to manage money with confidence
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-              In our ancient heritage, money was never viewed as a source of anxiety or ruthless
-              speculation. It was cultivated as a calm river (*pravaha*), guided by ethical banks,
-              nurturing family, community, and lifelong peace of mind.
+              Explore clear, practical guidance on budgeting, saving, investing, and planning for
+              the future. Build habits that support your priorities and give you more confidence
+              with money.
             </p>
           </div>
 
@@ -81,9 +81,9 @@ export const LearnView: React.FC<LearnViewProps> = ({
               <span className="material-symbols-outlined text-[20px]">school</span>
             </div>
             <div>
-              <span className="text-xs text-on-surface-variant block font-medium">Wisdom Progress</span>
+              <span className="text-xs text-on-surface-variant block font-medium">Learning progress</span>
               <span className="font-headline-sm text-sm font-bold text-on-surface">
-                {readArticles.length} of {VEDIC_WISDOM_ARTICLES.length} Treatises Mastered
+                {readArticles.length} of {LEARNING_ARTICLES.length} guides read
               </span>
             </div>
           </div>
@@ -96,14 +96,14 @@ export const LearnView: React.FC<LearnViewProps> = ({
         <div className="lg:col-span-4 flex flex-col gap-4">
           <div className="flex items-center justify-between px-1">
             <span className="font-label-sm uppercase tracking-wider text-on-surface-variant font-bold text-xs">
-              Curated Artha Treatises
+              Curated financial guides
             </span>
             <span className="text-xs text-primary font-semibold">
               {filteredArticles.length} Available
             </span>
           </div>
 
-          {/* Search in Treatises */}
+          {/* Search in guides */}
           <div className="relative flex items-center">
             <span className="material-symbols-outlined absolute left-3 text-on-surface-variant text-[18px]">
               search
@@ -147,7 +147,7 @@ export const LearnView: React.FC<LearnViewProps> = ({
                     {article.englishTitle}
                   </h4>
                   <p className="font-headline-sm text-xs italic mt-1 opacity-90">
-                    "{article.sanskritTitle}"
+                    "{article.subtitle}"
                   </p>
                   <p className="font-body-sm text-xs mt-2 line-clamp-2 opacity-80">
                     {article.excerpt}
@@ -176,14 +176,14 @@ export const LearnView: React.FC<LearnViewProps> = ({
         <div
           className="lg:col-span-8 rounded-3xl p-8 lg:p-10 shadow-xl border border-white/60 space-y-6"
           style={{
-            background: 'rgba(255, 250, 240, 0.82)',
+            background: 'rgba(255, 255, 255, 0.82)',
             backdropFilter: 'blur(20px)',
           }}
         >
           <div className="border-b border-outline-variant/30 pb-5 space-y-2">
             <div className="flex items-center justify-between">
               <span className="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-xs font-semibold">
-                {activeArticle.readTime} · Vedic Commentary
+                {activeArticle.readTime} · Values-based Commentary
               </span>
               <button
                 onClick={() => onToggleReadArticle(activeArticle.id)}
@@ -204,7 +204,7 @@ export const LearnView: React.FC<LearnViewProps> = ({
               {activeArticle.englishTitle}
             </h3>
             <div className="flex items-center gap-2 text-sm text-secondary font-headline-sm font-bold">
-              <span>{activeArticle.sanskritTitle}</span>
+              <span>{activeArticle.subtitle}</span>
               <span>—</span>
               <span className="font-body-sm font-normal text-on-surface-variant">
                 {activeArticle.author}
@@ -222,14 +222,14 @@ export const LearnView: React.FC<LearnViewProps> = ({
 
           <div className="pt-6 border-t border-outline-variant/30 flex flex-col sm:flex-row items-center justify-between gap-3">
             <span className="text-xs text-on-surface-variant">
-              From the ArthSetu Heritage Repository
+              From the ArthSetu learning library
             </span>
             <button
               onClick={handleBookmark}
               className="px-4 py-2 rounded-xl bg-surface-container-lowest text-on-surface font-label-md shadow-xs border border-outline-variant/30 hover:bg-surface-container cursor-pointer flex items-center gap-1.5 transition-colors text-xs font-semibold"
             >
               <span className="material-symbols-outlined text-[18px] text-primary">bookmark</span>
-              <span>Save to Wisdom Library</span>
+              <span>Save to reading list</span>
             </button>
           </div>
         </div>

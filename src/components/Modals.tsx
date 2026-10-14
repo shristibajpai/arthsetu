@@ -19,7 +19,7 @@ interface NewGoalModalProps {
 
 export const NewGoalModal: React.FC<NewGoalModalProps> = ({ isOpen, onClose, onAddGoal }) => {
   const [title, setTitle] = useState('');
-  const [categoryName, setCategoryName] = useState('Ghar Prapti');
+  const [categoryName, setCategoryName] = useState('House purchase');
   const [targetAmount, setTargetAmount] = useState('');
   const [currentAmount, setCurrentAmount] = useState('');
   const [monthlySip, setMonthlySip] = useState('');
@@ -67,14 +67,14 @@ export const NewGoalModal: React.FC<NewGoalModalProps> = ({ isOpen, onClose, onA
       }),
       timelineDetails: details.trim() || `${title} dedicated milestone fund`,
       icon:
-        categoryName === 'Ghar Prapti'
+        categoryName === 'House purchase'
           ? 'home_work'
-          : categoryName === 'Bachhon Ki Shiksha'
+          : categoryName === 'Education'
           ? 'school'
           : categoryName === 'Vahan Prapti'
           ? 'directions_car'
-          : categoryName === 'Teerth & Parivar Yatra'
-          ? 'temple_hindu'
+          : categoryName === 'Family travel'
+          ? 'home_work'
           : 'flag',
       completed: current >= target,
     };
@@ -94,7 +94,7 @@ export const NewGoalModal: React.FC<NewGoalModalProps> = ({ isOpen, onClose, onA
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-xs p-4 animate-in fade-in duration-200">
       <div
         className="rounded-3xl p-7 max-w-lg w-full shadow-2xl border border-white/60 space-y-5 animate-in zoom-in-95 duration-200"
-        style={{ background: '#fffaf0' }}
+        style={{ background: '#ffffff' }}
       >
         <div className="flex items-center justify-between border-b border-outline-variant/30 pb-4">
           <div className="flex items-center gap-3">
@@ -103,7 +103,7 @@ export const NewGoalModal: React.FC<NewGoalModalProps> = ({ isOpen, onClose, onA
             </div>
             <div>
               <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
-                Create New Lakshya
+                Create New Goal
               </h3>
               <p className="font-body-sm text-xs text-on-surface-variant">
                 Formulate a deliberate financial milestone
@@ -128,7 +128,7 @@ export const NewGoalModal: React.FC<NewGoalModalProps> = ({ isOpen, onClose, onA
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-label-sm font-semibold text-on-surface-variant uppercase mb-1">
-              Lakshya Title
+              Goal Title
             </label>
             <input
               type="text"
@@ -153,10 +153,10 @@ export const NewGoalModal: React.FC<NewGoalModalProps> = ({ isOpen, onClose, onA
                 onChange={(e) => setCategoryName(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-outline-variant/40 bg-surface-container-lowest font-body-sm focus:outline-none"
               >
-                <option value="Ghar Prapti">Ghar Prapti (Real Estate)</option>
-                <option value="Bachhon Ki Shiksha">Bachhon Ki Shiksha (Education)</option>
-                <option value="Teerth & Parivar Yatra">Teerth Yatra (Pilgrimage)</option>
-                <option value="Swatantrata">Swatantrata (Freedom Corpus)</option>
+                <option value="House purchase">House purchase (Real Estate)</option>
+                <option value="Education">Education (Education)</option>
+                <option value="Family travel">Family travel</option>
+                <option value="Financial independence">Financial independence</option>
                 <option value="Vahan Prapti">Vahan Prapti (Vehicle)</option>
                 <option value="Technology & Growth">Technology & Tools</option>
                 <option value="Personal Milestone">Personal Milestone</option>
@@ -256,7 +256,7 @@ export const NewGoalModal: React.FC<NewGoalModalProps> = ({ isOpen, onClose, onA
               type="submit"
               className="px-6 py-2 rounded-xl bg-primary text-on-primary font-label-md font-semibold cursor-pointer shadow-md hover:bg-primary-container transition-all"
             >
-              Consecrate Lakshya
+              Create Goal
             </button>
           </div>
         </form>
@@ -323,11 +323,11 @@ export const EditGoalModal: React.FC<EditGoalModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-xs p-4 animate-in fade-in duration-200">
       <div
         className="rounded-3xl p-7 max-w-md w-full shadow-2xl border border-white/60 space-y-5 animate-in zoom-in-95 duration-200"
-        style={{ background: '#fffaf0' }}
+        style={{ background: '#ffffff' }}
       >
         <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3">
           <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
-            Edit Lakshya: {goal.title}
+            Edit Goal: {goal.title}
           </h3>
           <button onClick={onClose} className="text-on-surface-variant hover:text-on-surface text-xl font-bold cursor-pointer">
             ✕
@@ -337,7 +337,7 @@ export const EditGoalModal: React.FC<EditGoalModalProps> = ({
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-label-sm font-semibold text-on-surface-variant uppercase mb-1">
-              Lakshya Title
+              Goal Title
             </label>
             <input
               type="text"
@@ -447,12 +447,12 @@ export const ContributeGoalModal: React.FC<ContributeGoalModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-xs p-4 animate-in fade-in duration-200">
       <div
         className="rounded-3xl p-7 max-w-sm w-full shadow-2xl border border-white/60 space-y-5 animate-in zoom-in-95 duration-200"
-        style={{ background: '#fffaf0' }}
+        style={{ background: '#ffffff' }}
       >
         <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3">
           <div>
             <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
-              Deposit to Lakshya
+              Deposit to Goal
             </h3>
             <p className="text-xs text-on-surface-variant truncate max-w-[220px]">
               {goal.title}
@@ -583,7 +583,7 @@ export const EditExpenseModal: React.FC<EditExpenseModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-xs p-4 animate-in fade-in duration-200">
       <div
         className="rounded-3xl p-7 max-w-md w-full shadow-2xl border border-white/60 space-y-4 animate-in zoom-in-95 duration-200"
-        style={{ background: '#fffaf0' }}
+        style={{ background: '#ffffff' }}
       >
         <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3">
           <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
@@ -633,8 +633,8 @@ export const EditExpenseModal: React.FC<EditExpenseModalProps> = ({
                 onChange={(e) => setNature(e.target.value as 'Need' | 'Want')}
                 className="w-full px-3 py-2.5 rounded-xl border border-outline-variant/40 bg-surface-container-lowest font-body-sm focus:outline-none font-semibold"
               >
-                <option value="Need">Aavashyak (Need)</option>
-                <option value="Want">Aanand (Want)</option>
+                <option value="Need">Essential need</option>
+                <option value="Want">Lifestyle spending</option>
               </select>
             </div>
           </div>
@@ -749,7 +749,7 @@ export const AdjustAllocationModal: React.FC<AdjustAllocationModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-xs p-4 animate-in fade-in duration-200">
       <div
         className="rounded-3xl p-7 max-w-md w-full shadow-2xl border border-white/60 space-y-5 animate-in zoom-in-95 duration-200"
-        style={{ background: '#fffaf0' }}
+        style={{ background: '#ffffff' }}
       >
         <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3">
           <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
@@ -899,7 +899,7 @@ export const BudgetLimitModal: React.FC<BudgetLimitModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/45 backdrop-blur-xs p-4 animate-in fade-in duration-200">
       <div
         className="rounded-3xl p-7 max-w-sm w-full shadow-2xl border border-white/60 space-y-4 animate-in zoom-in-95 duration-200"
-        style={{ background: '#fffaf0' }}
+        style={{ background: '#ffffff' }}
       >
         <div className="flex items-center justify-between">
           <h3 className="font-headline-sm text-headline-sm text-on-surface font-semibold">
@@ -971,13 +971,13 @@ export const NotificationsModal: React.FC<NotificationsModalProps> = ({
     <div className="fixed inset-0 z-50 flex items-start justify-end bg-black/35 backdrop-blur-xs p-4 sm:p-6 animate-in fade-in duration-200">
       <div
         className="rounded-3xl p-6 max-w-md w-full shadow-2xl border border-white/60 space-y-4 animate-in slide-in-from-right duration-200 mt-16"
-        style={{ background: '#fffaf0' }}
+        style={{ background: '#ffffff' }}
       >
         <div className="flex items-center justify-between border-b border-outline-variant/30 pb-3">
           <div className="flex items-center gap-2">
             <span className="material-symbols-outlined text-secondary text-[22px]">notifications</span>
             <h3 className="font-headline-sm text-[18px] text-on-surface font-semibold">
-              Auspicious Notifications
+              Notifications
             </h3>
           </div>
           <button onClick={onClose} className="text-on-surface-variant hover:text-on-surface text-xl font-bold cursor-pointer">
