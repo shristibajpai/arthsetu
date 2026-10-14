@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LOGO_URL } from './Sidebar';
-import { NotificationItem } from '../types';
+import { NavScreen, NotificationItem } from '../types';
 
 interface HeaderProps {
   notifications: NotificationItem[];
@@ -8,6 +8,8 @@ interface HeaderProps {
   onNavigateProfile: () => void;
   onSearch: (query: string) => void;
   searchQuery: string;
+  searchResults: { id: string; title: string; detail: string; screen: NavScreen }[];
+  onSelectSearchResult: (screen: NavScreen) => void;
   onToggleMobileMenu?: () => void;
   userName?: string;
   healthScore?: number;
@@ -20,11 +22,15 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigateProfile,
   onSearch,
   searchQuery,
+  searchResults,
+  onSelectSearchResult,
   onToggleMobileMenu,
   userName = 'Aarav Sharma',
   healthScore = 88,
   onOpenAI,
 }) => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
   const unreadCount = notifications.filter((n) => !n.read).length;
   const firstName = userName.split(' ')[0] || 'Aarav';
   const initials = userName
@@ -82,24 +88,63 @@ export const Header: React.FC<HeaderProps> = ({
 
       {/* Right: Search, Score, AI Advisor, Notifications, Avatar */}
       <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-        <div className="relative items-center hidden xl:flex">
+        <button type="button" aria-label="Open search" onClick={() => setIsSearchOpen((open) => !open)} className="lg:hidden p-2 rounded-xl text-on-surface-variant hover:bg-surface-container-high">
+          <span className="material-symbols-outlined text-[21px]">search</span>
+        </button>
+        <div className={`relative items-center ${isSearchOpen ? 'absolute top-[4.5rem] left-3 right-3 z-50 flex lg:static lg:top-auto lg:left-auto lg:right-auto' : 'hidden lg:flex'}`}>
           <span className="material-symbols-outlined absolute left-3.5 text-on-surface-variant text-[18px]">
             search
           </span>
           <input
-            className="w-56 h-9 pl-9 pr-7 rounded-xl bg-surface-container-lowest/70 text-on-surface placeholder:text-on-surface-variant/70 font-body-sm text-xs backdrop-blur-sm border border-outline-variant/30 focus:outline-none focus:border-primary/50 focus:bg-surface-container-lowest transition-all"
-            placeholder="Search expenses, goals, or plans..."
+            className="w-full lg:w-56 h-10 pl-9 pr-8 rounded-xl bg-white text-on-surface placeholder:text-on-surface-variant/70 font-body-sm text-sm border border-outline-variant/50 shadow-sm focus:outline-none focus:border-primary/60 focus:ring-2 focus:ring-primary/10 transition-all"
+            placeholder="Search expenses and goals..."
             type="text"
             value={searchQuery}
             onChange={(e) => onSearch(e.target.value)}
+            onFocus={() => setIsSearchFocused(true)}
+            onKeyDown={(e) => {
+              if (e.key === 'Escape') {
+                setIsSearchFocused(false);
+                setIsSearchOpen(false);
+              }
+              if (e.key === 'Enter' && searchResults[0]) {
+                onSelectSearchResult(searchResults[0].screen);
+                setIsSearchFocused(false);
+                setIsSearchOpen(false);
+              }
+            }}
           />
           {searchQuery && (
             <button
+              type="button"
+              aria-label="Clear search"
               onClick={() => onSearch('')}
               className="absolute right-2.5 text-xs text-on-surface-variant hover:text-on-surface cursor-pointer"
             >
               ✕
             </button>
+          )}
+          {isSearchFocused && searchQuery.trim() && (
+            <div className="absolute top-full left-0 right-0 mt-2 p-2 rounded-xl bg-white border border-outline-variant/50 shadow-xl z-50 max-h-80 overflow-y-auto">
+              {searchResults.length ? searchResults.map((result) => (
+                <button
+                  key={`${result.screen}-${result.id}`}
+                  type="button"
+                  onMouseDown={(event) => event.preventDefault()}
+                  onClick={() => {
+                    onSelectSearchResult(result.screen);
+                    setIsSearchFocused(false);
+                    setIsSearchOpen(false);
+                  }}
+                  className="w-full rounded-lg px-3 py-2.5 text-left hover:bg-slate-50 transition-colors"
+                >
+                  <span className="block text-sm font-medium text-on-surface truncate">{result.title}</span>
+                  <span className="block mt-0.5 text-xs text-on-surface-variant">{result.detail}</span>
+                </button>
+              )) : (
+                <p className="px-3 py-3 text-sm text-on-surface-variant">No matching expenses or goals.</p>
+              )}
+            </div>
           )}
         </div>
 

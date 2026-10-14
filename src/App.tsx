@@ -67,6 +67,36 @@ export default function App() {
 
   const [searchQuery, setSearchQuery] = useState('');
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
+  const searchResults = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
+    if (!query) return [];
+
+    const expenseResults = expenses
+      .filter((expense) =>
+        [expense.name, expense.category, expense.channel, expense.notes ?? '']
+          .some((value) => value.toLowerCase().includes(query))
+      )
+      .slice(0, 5)
+      .map((expense) => ({
+        id: expense.id,
+        title: expense.name,
+        detail: `${expense.category} · ${expense.channel}`,
+        screen: 'expenses' as const,
+      }));
+    const goalResults = goals
+      .filter((goal) =>
+        [goal.title, goal.categoryName, goal.timelineDetails]
+          .some((value) => value.toLowerCase().includes(query))
+      )
+      .slice(0, 5)
+      .map((goal) => ({
+        id: goal.id,
+        title: goal.title,
+        detail: `${goal.categoryName} · Goal`,
+        screen: 'goals-and-what-if' as const,
+      }));
+    return [...expenseResults, ...goalResults].slice(0, 8);
+  }, [expenses, goals, searchQuery]);
 
   // Modals state
   const [isNewGoalModalOpen, setIsNewGoalModalOpen] = useState(false);
@@ -225,6 +255,8 @@ export default function App() {
           onNavigateProfile={() => setCurrentScreen('profile')}
           onSearch={setSearchQuery}
           searchQuery={searchQuery}
+          searchResults={searchResults}
+          onSelectSearchResult={setCurrentScreen}
           onToggleMobileMenu={() => setIsMobileSidebarOpen((prev) => !prev)}
           userName={userProfile.name}
           healthScore={healthMetrics.score}
