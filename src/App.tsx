@@ -52,9 +52,6 @@ import {
 } from './components/Modals';
 import { AIAssistantModal } from './components/AIAssistantModal';
 
-export const GLOBAL_BACKDROP_IMAGE =
-  'https://lh3.googleusercontent.com/aida-public/AB6AXuDl_Fb_hin10sv2C0rl58jAy17tJDJOkae64ixpSSTYzJLWegaw2_vgZ8FbWZ-wf7Ik9q4TzeFNevAxijaVdOwy0txxSeecw82RDvihWXIZVRKF2rEC8gblO_QOMkTsfzokAY0RC-KlsjMU5DDj_Vgl_bVV2D53FRt8l6Q0yBojDkGaYTnLxqikiHo-Ut5NX-u2wh3573y5s0Hb1-Yb-lp7EhwlazaPtMzGLL0R029jLOgqxYIxEBkqjg';
-
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<NavScreen>('dashboard');
 
@@ -205,16 +202,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-surface font-body-md text-on-surface antialiased relative selection:bg-secondary-fixed overflow-x-hidden">
-      {/* Background with serene watercolor painting & translucent gradient backdrop */}
-      <div
-        className="fixed inset-0 z-0 bg-cover bg-center pointer-events-none"
-        style={{
-          backgroundImage: `url('${GLOBAL_BACKDROP_IMAGE}')`,
-          backgroundAttachment: 'fixed',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-[#f4e8d2]/90 via-[#fffaf0]/80 to-[#f9edd6]/85 backdrop-blur-[10px]" />
-      </div>
+      <div className="fixed inset-0 z-0 bg-gradient-to-br from-[#f8fafc] via-[#f3f6f9] to-[#eef3f7] pointer-events-none" />
 
       {/* Left Navigation Sidebar */}
       <Sidebar

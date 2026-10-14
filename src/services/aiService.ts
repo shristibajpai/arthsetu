@@ -152,7 +152,7 @@ export const aiService = {
           {
             id: 'msg-welcome',
             role: 'model',
-            text: 'Namaste! I am ArthSetu AI, your personal financial companion. Powered by multiple AI engines (Google Gemini, OpenAI GPT, and xAI Grok). I can help calculate emergency fund targets, structure SIPs, optimize Indian tax regimes, or solve any financial dilemma you face.\n\nWhat is on your mind regarding your money today?',
+            text: 'Hello! I am ArthSetu AI, your personal financial companion. Powered by multiple AI engines (Google Gemini, OpenAI GPT, and xAI Grok). I can help calculate emergency fund targets, structure SIPs, optimize Indian tax regimes, or solve any financial dilemma you face.\n\nWhat is on your mind regarding your money today?',
             timestamp: 'Just now',
             provider: 'gemini',
           },
@@ -207,7 +207,7 @@ export const aiService = {
       return {
         reply: `I am reflecting on your question with mindful financial principles. If you are experiencing a cashflow pinch or deciding between debt clearance and investing:
 
-1. **Aavashyak (Needs First)**: Protect basic housing, food, and medicine obligations.
+1. **Essentials (Needs First)**: Protect basic housing, food, and medicine obligations.
 2. **Emergency Shield**: Maintain at least 1 month of urgent buffer before taking speculative risks.
 3. **High-Cost Debt**: Eliminate any credit card balances (36%–44% interest) before making discretionary investments.
 

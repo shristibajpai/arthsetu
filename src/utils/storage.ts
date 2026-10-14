@@ -25,7 +25,7 @@ export const DEFAULT_PROFILE: UserProfile = {
   occupation: 'Wealth Architect & Lead Systems Engineer',
   monthlyIncome: 185000,
   annualIncome: 2220000,
-  riskPreference: 'Balanced Growth (Madhyam Marg)',
+  riskPreference: 'Balanced growth',
   taxRegime: 'new',
   email: 'shristiajeetbajpai@gmail.com',
   location: 'Pune, Maharashtra',
@@ -70,7 +70,15 @@ function safeSet<T>(key: string, value: T): void {
 }
 
 export function loadProfile(): UserProfile {
-  return safeGet<UserProfile>(STORAGE_KEYS.PROFILE, DEFAULT_PROFILE);
+  const profile = safeGet<UserProfile>(STORAGE_KEYS.PROFILE, DEFAULT_PROFILE);
+  const savedRiskPreference = profile.riskPreference as string;
+  const riskPreference = savedRiskPreference.startsWith('Conservative')
+    ? 'Conservative'
+    : savedRiskPreference.startsWith('Aggressive')
+      ? 'Aggressive growth'
+      : 'Balanced growth';
+
+  return { ...profile, riskPreference };
 }
 
 export function saveProfile(profile: UserProfile): void {

@@ -72,10 +72,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
           isMobileOpen ? 'translate-x-0 shadow-2xl' : '-translate-x-full pointer-events-none'
         }`}
         style={{
-          background: 'rgba(255, 250, 240, 0.94)',
+          background: 'rgba(255, 255, 255, 0.97)',
           backdropFilter: 'blur(24px)',
-          borderRight: '1px solid rgba(255, 255, 255, 0.8)',
-          boxShadow: '0 16px 40px rgba(80, 65, 45, 0.18)',
+          borderRight: '1px solid rgba(215, 222, 231, 0.85)',
+          boxShadow: '0 16px 40px rgba(23, 33, 47, 0.12)',
         }}
       >
       <div className="flex flex-col gap-6">
@@ -179,7 +179,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
       {/* User Card at Bottom */}
       <div
         style={{
-          background: 'rgba(243, 231, 209, 0.65)',
+          background: 'rgba(241, 244, 248, 0.9)',
           border: '1px solid rgba(255, 255, 255, 0.7)',
         }}
         className="flex items-center justify-between backdrop-blur-md px-3.5 py-3 rounded-2xl shadow-sm"

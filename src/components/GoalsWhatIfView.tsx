@@ -108,7 +108,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
   const simulatedMonthlySavings =
     currentActualSavings + extraSavings + reduceWants + (simulatedIncome - baselineMonthlyIncome);
 
-  // Impact on Swatantrata timeline (Years shifted)
+  // Impact on Financial independence timeline (Years shifted)
   // Each ₹10,000 extra per month accelerates terminal corpus by ~1.1 years at 11% yield
   const accelerationFromSavings = (extraSavings + reduceWants) * 0.00011;
   const dragFromInflation = (inflation - 6.0) * 0.8;
@@ -120,7 +120,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
   const baselineAge = 52.0;
   const finalAge = Number((baselineAge - netYearsSaved).toFixed(1));
 
-  // Adjusted Swatantrata target based on simulated inflation
+  // Adjusted Financial independence target based on simulated inflation
   const baselineCrores = 3.5;
   const adjustedCroreVal = Number((baselineCrores * Math.pow(1 + (inflation - 6.0) / 100, 15)).toFixed(2));
   const fillPct = clampPercent((baselineCrores / adjustedCroreVal) * 100);
@@ -161,7 +161,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
       {/* Delete Goal Confirmation Modal */}
       <ConfirmationModal
         isOpen={!!deletingGoal}
-        title="Delete Financial Lakshya?"
+        title="Delete Financial Goal?"
         message={
           deletingGoal
             ? `Are you sure you want to delete "${deletingGoal.title}" (${formatINR(
@@ -195,11 +195,11 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
               </span>
             </div>
             <h2 className="font-headline-lg text-headline-lg text-on-surface mt-1 font-bold">
-              Lakshya Marg — Goal Architecture & Timeline
+              Goals and timelines
             </h2>
             <p className="font-body-md text-body-md text-on-surface-variant mt-2 leading-relaxed">
-              Ascend step by step from temporal necessities to spiritual and financial freedom
-              (*Swatantrata*). Formulate, track, and dynamically stress-test your life milestones.
+              Plan for the milestones that matter. Track progress and see how changes to your savings
+              affect your timeline.
             </p>
           </div>
 
@@ -210,7 +210,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
               type="button"
             >
               <span className="material-symbols-outlined text-[20px]">add_circle</span>
-              <span>Consecrate New Lakshya</span>
+              <span>Create New Goal</span>
             </button>
           </div>
         </div>
@@ -226,13 +226,13 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
             </span>
             <span className="font-label-sm text-xs text-primary flex items-center gap-1 mt-0.5 font-medium">
               <span className="material-symbols-outlined text-[14px]">trending_up</span>{' '}
-              {goals.length} Active Margas
+              {goals.length} Active goals
             </span>
           </div>
 
           <div className="flex flex-col min-w-0">
             <span className="font-label-sm text-xs text-on-surface-variant uppercase tracking-wider font-semibold">
-              Present Sanchay (Corpus)
+              Current savings
             </span>
             <span className="font-headline-sm text-headline-sm text-secondary mt-0.5 font-bold">
               {formatLakhCrore(totalSavedCorpus)}
@@ -262,18 +262,18 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
               Age {finalAge}
             </span>
             <span className="font-label-sm text-xs text-on-surface-variant mt-0.5">
-              Swatantrata arrival
+              Target retirement age
             </span>
           </div>
         </div>
       </section>
 
-      {/* Lakshya Journey Cards */}
+      {/* Goal Journey Cards */}
       <section className="flex flex-col gap-6">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
             <h3 className="font-headline-md text-headline-md text-on-surface font-bold">
-              Stepping Stones of ArthSetu
+              Your financial goals
             </h3>
             <p className="font-body-sm text-xs text-on-surface-variant">
               Active milestones tracked with real progress and dedicated monthly contributions.
@@ -338,7 +338,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
               No financial goals recorded yet
             </h4>
             <p className="text-xs text-on-surface-variant mt-1 max-w-sm">
-              Formulate your first Lakshya (such as home purchase, child education, or car) to start
+              Formulate your first Goal (such as home purchase, child education, or car) to start
               disciplined monthly tracking.
             </p>
             <button
@@ -360,7 +360,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
                 <div
                   key={goal.id}
                   className="group relative flex flex-col justify-between min-h-[350px] backdrop-blur-xl rounded-3xl p-6 lg:p-7 shadow-md hover:shadow-xl transition-all duration-300 border border-white/60"
-                  style={{ background: 'rgba(255, 250, 240, 0.78)' }}
+                  style={{ background: 'rgba(255, 255, 255, 0.78)' }}
                 >
                   <div>
                     <div className="flex items-start justify-between gap-4">
@@ -556,7 +556,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
       <section
         className="relative w-full rounded-3xl shadow-xl p-8 lg:p-10 flex flex-col gap-8 border border-white/60"
         style={{
-          background: 'rgba(255, 250, 240, 0.82)',
+          background: 'rgba(255, 255, 255, 0.82)',
           backdropFilter: 'blur(20px)',
         }}
       >
@@ -792,7 +792,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
               <div className="flex flex-col bg-surface-container-lowest/80 p-5 rounded-2xl shadow-xs border border-outline-variant/20">
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-on-surface-variant font-medium">
-                    Swatantrata Arrival Shift
+                    Financial independence Arrival Shift
                   </span>
                   <span
                     className={`px-2.5 py-1 rounded-full text-xs font-bold ${
@@ -858,7 +858,7 @@ export const GoalsWhatIfView: React.FC<GoalsWhatIfViewProps> = ({
                     {formatINR(totalSabbaticalDrawdown)}
                   </span>
                   <span className="text-[11px] text-tertiary mt-1">
-                    Covered by Aapda Kosh buffer without liquidating active equities.
+                    Covered by Emergency fund buffer without liquidating active equities.
                   </span>
                 </div>
               )}

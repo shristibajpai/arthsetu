@@ -38,10 +38,10 @@ export const Header: React.FC<HeaderProps> = ({
     <header
       className="fixed top-0 left-0 right-0 h-20 z-40 px-3 sm:px-6 lg:px-8 flex items-center justify-between gap-2 sm:gap-4"
       style={{
-        background: 'rgba(255, 250, 240, 0.88)',
+        background: 'rgba(255, 255, 255, 0.92)',
         backdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.6)',
-        boxShadow: '0 10px 30px rgba(70, 50, 30, 0.06)',
+        borderBottom: '1px solid rgba(215, 222, 231, 0.8)',
+        boxShadow: '0 8px 24px rgba(23, 33, 47, 0.04)',
       }}
     >
       {/* Left: Brand / Salutation with 3-lines Menu Trigger */}
@@ -71,14 +71,11 @@ export const Header: React.FC<HeaderProps> = ({
               onClick={onNavigateProfile}
               className="font-headline-sm text-sm sm:text-base lg:text-[19px] text-on-surface font-semibold tracking-tight cursor-pointer hover:text-primary transition-colors truncate"
             >
-              Namaste, {firstName} <span className="hidden sm:inline">— Shubh Prabhat</span>
+              Good morning, {firstName}
             </h1>
           </div>
           <div className="hidden md:flex items-center gap-1.5 text-on-surface-variant font-label-sm text-[11px] truncate">
-            <span className="material-symbols-outlined text-[14px] text-tertiary">brightness_7</span>
-            <span>Kartik Shukla, Nov 2025</span>
-            <span className="w-1 h-1 rounded-full bg-outline-variant" />
-            <span className="text-tertiary font-semibold">Dawn Cycle</span>
+            <span>Your financial overview</span>
           </div>
         </div>
       </div>
@@ -91,7 +88,7 @@ export const Header: React.FC<HeaderProps> = ({
           </span>
           <input
             className="w-56 h-9 pl-9 pr-7 rounded-xl bg-surface-container-lowest/70 text-on-surface placeholder:text-on-surface-variant/70 font-body-sm text-xs backdrop-blur-sm border border-outline-variant/30 focus:outline-none focus:border-primary/50 focus:bg-surface-container-lowest transition-all"
-            placeholder="Search mantras, plans..."
+            placeholder="Search expenses, goals, or plans..."
             type="text"
             value={searchQuery}
             onChange={(e) => onSearch(e.target.value)}
@@ -106,16 +103,16 @@ export const Header: React.FC<HeaderProps> = ({
           )}
         </div>
 
-        {/* Vittiya Santulan Health Badge */}
+        {/* Financial health Health Badge */}
         <div
           onClick={onNavigateProfile}
           className="flex items-center gap-1.5 bg-secondary-fixed/50 px-2.5 sm:px-3 py-1.5 rounded-full backdrop-blur-sm border border-secondary-fixed-dim/30 shadow-xs cursor-pointer hover:bg-secondary-fixed/70 transition-all shrink-0"
-          title="Vittiya Santulan Score"
+          title="Financial health Score"
         >
           <span className="material-symbols-outlined text-secondary text-[16px] sm:text-[18px]">spa</span>
           <div className="flex items-center gap-1">
             <span className="hidden sm:inline font-label-sm text-[11px] text-on-surface-variant font-medium">
-              Vittiya:
+              Health:
             </span>
             <span className="font-label-lg text-xs sm:text-sm font-bold text-secondary">
               {healthScore}/100

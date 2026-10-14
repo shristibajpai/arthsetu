@@ -14,7 +14,7 @@ export interface AcademyConcept {
     | 'Retirement'
     | 'Fraud & Security';
   title: string;
-  sanskritTitle?: string;
+  subtitle?: string;
   readTime: string;
   summary: string;
   simpleExplanation: string;
@@ -50,8 +50,8 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
   {
     id: 'mb-compounding',
     category: 'Money Basics',
-    title: 'Compounding & Compound Interest (Chakravriddhi)',
-    sanskritTitle: 'Chakravriddhi Vyaja',
+    title: 'Compounding & Compound Interest',
+    subtitle: 'How compounding works',
     readTime: '4 min',
     summary: 'The mathematical wonder where your interest earns interest over time, accelerating wealth creation.',
     simpleExplanation:
@@ -73,8 +73,8 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
   {
     id: 'mb-inflation',
     category: 'Money Basics',
-    title: 'Inflation & Purchasing Power (Mulya Hrāsa)',
-    sanskritTitle: 'Mulya Hrāsa',
+    title: 'Inflation & Purchasing Power',
+    subtitle: 'How inflation affects your money',
     readTime: '3 min',
     summary: 'Why ₹100 today buys less than ₹100 ten years ago, and how to protect your family from silent devaluation.',
     simpleExplanation:
@@ -96,8 +96,8 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
   {
     id: 'mb-networth',
     category: 'Money Basics',
-    title: 'Assets, Liabilities & True Net Worth (Artha Sanchay)',
-    sanskritTitle: 'Sampatti & Rina',
+    title: 'Assets, Liabilities & Net Worth',
+    subtitle: 'Assets & liabilities',
     readTime: '4 min',
     summary: 'Understanding the clear distinction between what puts money in your pocket and what extracts it.',
     simpleExplanation:
@@ -121,7 +121,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'bg-50-30-20',
     category: 'Budgeting',
     title: 'The Indian 50/30/20 & Modified 30/38/15/17 Rule',
-    sanskritTitle: 'Mitavyaya Vidhi',
+    subtitle: 'Balanced budgeting',
     readTime: '4 min',
     summary: 'A disciplined framework balancing essential shelter, long-term security, and guilt-free celebration.',
     simpleExplanation:
@@ -144,15 +144,15 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
   {
     id: 'sv-emergency-fund',
     category: 'Savings',
-    title: 'Aapda Kosh: Emergency Fund Calculation & Tiering',
-    sanskritTitle: 'Aapda Kosh (Suraksha)',
+    title: 'Emergency Fund Calculation & Planning',
+    subtitle: 'Plan an emergency fund',
     readTime: '5 min',
     summary: 'How to build an impenetrable 6-month safety runway structured across immediate and near-term liquidity.',
     simpleExplanation:
       'An emergency fund is money set aside strictly for true unexpected crises: sudden medical hospitalization, job transition, or urgent vehicle repairs.',
     howItWorks:
       'Calculated as 6 to 12 months of non-negotiable living expenses (rent, groceries, basic utilities, insurance premiums, essential EMIs). Divided into 3 tiers: Tier 1 (Immediate savings), Tier 2 (Liquid funds T+1), and Tier 3 (Instant sweep FDs).',
-    formula: 'Aapda Kosh = Monthly Essential Expenses × (6 to 9 Months)',
+    formula: 'Emergency fund = Monthly Essential Expenses × (6 to 9 Months)',
     example:
       'If your essential monthly burn is ₹40,000, your 6-month emergency fund is ₹2,40,000. Keep ₹80,000 in your savings bank account and ₹1,60,000 in a low-risk overnight mutual fund.',
     commonMistakes:
@@ -169,7 +169,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'bk-fd-vs-rd',
     category: 'Banking',
     title: 'Fixed Deposits (FD) vs. Recurring Deposits (RD)',
-    sanskritTitle: 'Sthira Sanchaya',
+    subtitle: 'Fixed and recurring deposits',
     readTime: '3 min',
     summary: 'Guaranteed capital preservation instruments under RBI deposit insurance.',
     simpleExplanation:
@@ -192,7 +192,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'inv-sip-mutual-funds',
     category: 'Investing',
     title: 'Systematic Investment Plan (SIP) in Index & Mutual Funds',
-    sanskritTitle: 'Kramasho Nivesha',
+    subtitle: 'Regular investing',
     readTime: '5 min',
     summary: 'The disciplined vehicle to harness India’s economic growth without market timing anxiety.',
     simpleExplanation:
@@ -215,7 +215,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'ln-emi-debt',
     category: 'Loans',
     title: 'Understanding EMI, Principal, Interest & Debt-to-Income',
-    sanskritTitle: 'Rina Niyama',
+    subtitle: 'Debt guidelines',
     readTime: '4 min',
     summary: 'The true cost of borrowing and keeping your monthly obligations under the safe 40% threshold.',
     simpleExplanation:
@@ -238,8 +238,8 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
   {
     id: 'gl-gold-loan-guide',
     category: 'Gold Loans',
-    title: 'What is a Gold Loan and How Does It Work? (Swarna Rina)',
-    sanskritTitle: 'Swarna Rina Vidhana',
+    title: 'What is a Gold Loan and How Does It Work? (Gold loan)',
+    subtitle: 'Gold loan guide',
     readTime: '5 min',
     summary: 'A complete, transparent guide to securing liquid cash against gold jewelry without falling into auction traps.',
     simpleExplanation:
@@ -264,7 +264,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'ins-term-vs-endowment',
     category: 'Insurance',
     title: 'Term Life vs. Endowment Plans: Protection vs. Investment',
-    sanskritTitle: 'Bima Siddhantha',
+    subtitle: 'Insurance basics',
     readTime: '4 min',
     summary: 'Why you should never mix insurance with investment, and why Pure Term Insurance is the only true shield.',
     simpleExplanation:
@@ -287,7 +287,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'tx-new-vs-old-regime',
     category: 'Taxes',
     title: 'New vs. Old Income Tax Regime (Section 115BAC)',
-    sanskritTitle: 'Kara Niyojana',
+    subtitle: 'Tax planning',
     readTime: '5 min',
     summary: 'Navigating India’s income tax slabs, standard deductions, and selecting the optimal regime.',
     simpleExplanation:
@@ -310,7 +310,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'cr-cibil-score',
     category: 'Credit',
     title: 'CIBIL & Credit Score: Building and Protecting a 750+ Rating',
-    sanskritTitle: 'Rina Vishvasata',
+    subtitle: 'Credit confidence',
     readTime: '4 min',
     summary: 'How credit utilization and repayment track records determine your loan eligibility and interest rates.',
     simpleExplanation:
@@ -330,10 +330,10 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
 
   // 11. RETIREMENT
   {
-    id: 'rt-swatantrata-corpus',
+    id: 'rt-retirement-corpus',
     category: 'Retirement',
-    title: 'Retirement Corpus Calculation (Swatantrata)',
-    sanskritTitle: 'Moksha & Swatantrata',
+    title: 'Retirement Savings Calculator',
+    subtitle: 'Plan for retirement',
     readTime: '5 min',
     summary: 'Using the 25x and 30x rule adjusted for Indian inflation to achieve lifelong financial independence.',
     simpleExplanation:
@@ -357,7 +357,7 @@ export const ACADEMY_CONCEPTS: AcademyConcept[] = [
     id: 'fr-upi-phishing-safety',
     category: 'Fraud & Security',
     title: 'Protecting Yourself from UPI, OTP & Digital Banking Scams',
-    sanskritTitle: 'Suraksha & Satarkata',
+    subtitle: 'Fraud prevention',
     readTime: '4 min',
     summary: 'The cardinal rules of digital financial hygiene to protect your hard-earned bank balances.',
     simpleExplanation:

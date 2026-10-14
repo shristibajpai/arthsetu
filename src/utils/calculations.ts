@@ -172,15 +172,15 @@ export function calculateFinancialHealth(
     Math.max(10, savingsRateScore + emergencyScore + disciplineScore + goalsScore)
   );
 
-  let summary = 'Auspicious Financial Balance';
+  let summary = 'Financial health summary';
   if (totalScore >= 85) {
-    summary = 'Param Shrestha: Resilient Wealth Architecture & Fortress Protection';
+    summary = 'Excellent progress: strong savings and emergency coverage';
   } else if (totalScore >= 70) {
-    summary = 'Shubh Santulan: Steady Compounding with Strong Runway';
+    summary = 'Steady progress: keep building savings and staying on track';
   } else if (totalScore >= 50) {
-    summary = 'Madhyam Marg: Moderate Buffer with Expansion Room';
+    summary = 'Good progress: there is room to grow your savings';
   } else {
-    summary = 'Prarambhik: Enhance Emergency Buffer and Curtail Non-Essential Outflows';
+    summary = 'Getting started: build your emergency fund and review spending';
   }
 
   return {

@@ -6,7 +6,7 @@ export interface UserProfile {
   occupation: string;
   monthlyIncome: number;
   annualIncome: number;
-  riskPreference: 'Conservative (Suraksha)' | 'Balanced Growth (Madhyam Marg)' | 'Aggressive Growth (Tejas)';
+  riskPreference: 'Conservative' | 'Balanced growth' | 'Aggressive growth';
   taxRegime: 'new' | 'old';
   email: string;
   location: string;

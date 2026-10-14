@@ -114,7 +114,7 @@ export const ConnectAccountModal: React.FC<ConnectAccountModalProps> = ({
       <div
         className="rounded-3xl max-w-2xl w-full max-h-[90vh] shadow-2xl border border-white/60 flex flex-col overflow-hidden animate-in zoom-in-95 duration-200"
         style={{
-          background: 'rgba(255, 250, 240, 0.98)',
+          background: 'rgba(255, 255, 255, 0.98)',
           backdropFilter: 'blur(24px)',
         }}
       >

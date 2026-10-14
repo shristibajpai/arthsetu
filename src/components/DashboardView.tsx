@@ -87,9 +87,8 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             Your Money, Allocated.
           </h2>
           <p className="font-body-md text-body-md text-on-surface-variant max-w-2xl mt-1">
-            Rooted in mindful Indian financial discipline. Every rupee is purposefully routed into
-            foundational safety (*Suraksha*), daily sustenance (*Ann*), purposeful milestones
-            (*Lakshya*), and joyous celebration.
+            See your income, spending, savings, and goals in one place. Adjust your plan as your
+            priorities change.
           </p>
         </div>
 
@@ -111,11 +110,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div
           onClick={() => setShowHealthTooltip(!showHealthTooltip)}
           className="relative min-h-[175px] overflow-hidden rounded-2xl p-5 backdrop-blur-xl shadow-sm border border-white/60 flex flex-col justify-between cursor-pointer group hover:shadow-md transition-all"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">
-              Santulan Score
+              Financial health score
             </span>
             <span className="material-symbols-outlined text-primary text-[18px]">info</span>
           </div>
@@ -153,7 +152,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
                 {healthMetrics.score}/100
               </span>
               <span className="text-[10px] text-on-surface-variant font-medium">
-                {healthMetrics.score >= 80 ? 'Param Shrestha' : 'Shubh Santulan'}
+                {healthMetrics.score >= 80 ? 'Excellent progress' : 'Steady progress'}
               </span>
             </div>
           </div>
@@ -166,7 +165,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         {/* Card 2: Net Monthly Savings */}
         <div
           className="relative min-h-[175px] rounded-2xl p-5 backdrop-blur-xl shadow-sm border border-white/60 flex flex-col justify-between"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">
             Net Monthly Savings
@@ -191,7 +190,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div
           onClick={() => onNavigate('expenses')}
           className="relative min-h-[175px] rounded-2xl p-5 backdrop-blur-xl shadow-sm border border-white/60 flex flex-col justify-between cursor-pointer hover:shadow-md transition-all"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">
@@ -218,11 +217,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div
           onClick={() => onNavigate('emergency-fund')}
           className="relative min-h-[175px] rounded-2xl p-5 backdrop-blur-xl shadow-sm border border-white/60 flex flex-col justify-between cursor-pointer hover:shadow-md transition-all"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">
-              Aapda Runway
+              Emergency fund runway
             </span>
             <span className="material-symbols-outlined text-[16px] text-on-surface-variant">shield</span>
           </div>
@@ -245,11 +244,11 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div
           onClick={() => onNavigate('goals-and-what-if')}
           className="relative min-h-[175px] rounded-2xl p-5 backdrop-blur-xl shadow-sm border border-white/60 flex flex-col justify-between cursor-pointer hover:shadow-md transition-all"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">
-              Lakshya Capital
+              Goal Capital
             </span>
             <span className="material-symbols-outlined text-[16px] text-on-surface-variant">flag</span>
           </div>
@@ -259,7 +258,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               {formatLakhCrore(goals.reduce((a, b) => a + b.currentAmount, 0))}
             </span>
             <span className="text-[11px] text-tertiary font-semibold block mt-0.5">
-              {goals.length} Active Margas
+              {goals.length} Active goals
             </span>
           </div>
 
@@ -272,7 +271,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div
           onClick={() => onNavigate('profile')}
           className="relative min-h-[175px] rounded-2xl p-5 backdrop-blur-xl shadow-sm border border-white/60 flex flex-col justify-between cursor-pointer hover:shadow-md transition-all"
-          style={{ background: 'rgba(255, 250, 240, 0.8)' }}
+          style={{ background: 'rgba(255, 255, 255, 0.8)' }}
         >
           <div className="flex items-center justify-between">
             <span className="font-label-sm text-[11px] uppercase tracking-wider text-on-surface-variant font-semibold">
@@ -303,7 +302,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             <div className="flex items-center gap-2">
               <span className="material-symbols-outlined text-primary text-[22px]">verified</span>
               <h4 className="font-headline-sm text-base text-on-surface font-bold">
-                Vittiya Santulan Audit ({healthMetrics.score}/100)
+                Financial health score ({healthMetrics.score}/100)
               </h4>
             </div>
             <button
@@ -328,7 +327,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             </div>
 
             <div className="p-3 rounded-2xl bg-surface-container-low border border-outline-variant/20">
-              <span className="text-[11px] text-on-surface-variant block font-medium">2. Aapda Runway</span>
+              <span className="text-[11px] text-on-surface-variant block font-medium">2. Emergency fund runway</span>
               <span className="font-headline-sm text-sm text-primary font-bold">
                 {healthMetrics.emergencyScore}/25 pts
               </span>
@@ -362,18 +361,18 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
       {/* ZERO-SUM MONTHLY ALLOCATION & CASHFLOW SECTION */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        {/* Left Column: Dhan Vinyasa Allocation (5 Cols) */}
+        {/* Left column: monthly allocation */}
         <div
           className="lg:col-span-5 rounded-3xl p-7 shadow-xl border border-white/60 flex flex-col gap-6"
           style={{
-            background: 'rgba(255, 250, 240, 0.78)',
+            background: 'rgba(255, 255, 255, 0.78)',
             backdropFilter: 'blur(20px)',
           }}
         >
           <div className="flex items-center justify-between pb-3 border-b border-outline-variant/20">
             <div>
               <span className="font-label-sm text-xs uppercase tracking-widest text-secondary font-semibold">
-                Dhan Vinyasa
+                Monthly allocation
               </span>
               <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
                 Zero-Sum Monthly Allocation
@@ -422,7 +421,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </div>
             </div>
 
-            {/* Lakshya Goals */}
+            {/* Goals */}
             <div>
               <div className="flex justify-between items-center text-xs font-semibold mb-1">
                 <span className="flex items-center gap-1.5 text-tertiary">
@@ -482,18 +481,18 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           </div>
         </div>
 
-        {/* Right Column: Dhan Pravah Cashflow Chart (7 Cols) */}
+        {/* Right Column: Cash flow chart (7 columns) */}
         <div
           className="lg:col-span-7 rounded-3xl p-7 shadow-xl border border-white/60 flex flex-col gap-5"
           style={{
-            background: 'rgba(255, 250, 240, 0.78)',
+            background: 'rgba(255, 255, 255, 0.78)',
             backdropFilter: 'blur(20px)',
           }}
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-outline-variant/20">
             <div>
               <span className="font-label-sm text-xs uppercase tracking-widest text-secondary font-semibold">
-                Dhan Pravah
+                Cash flow
               </span>
               <h3 className="font-headline-sm text-headline-sm text-on-surface font-bold">
                 11-Month Cashflow Trajectory
@@ -597,7 +596,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         <div className="flex items-center justify-between">
           <div>
             <span className="font-label-sm text-xs uppercase tracking-widest text-secondary font-semibold">
-              Lakshya Overview
+              Goal Overview
             </span>
             <h3 className="font-headline-md text-headline-md text-on-surface font-bold">
               Active Financial Goals ({goals.length})
